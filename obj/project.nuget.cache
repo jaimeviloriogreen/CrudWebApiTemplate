@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "hsvAhsbwtsU=",
+  "success": true,
+  "projectFilePath": "/Users/jaimeviloriogreen/Desktop/ufhec-classes/lenguaje-programacion-3/CrudWebApi/CrudWebApi.csproj",
+  "expectedPackageFiles": [
+    "/Users/jaimeviloriogreen/.nuget/packages/microsoft.aspnetcore.openapi/10.0.2/microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",
+    "/Users/jaimeviloriogreen/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
