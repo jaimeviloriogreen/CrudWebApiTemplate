@@ -38,9 +38,7 @@ List<Book> books = [
 app.MapPost("/libro", (CreateBookDto book) => { });
 
 // Read all books
-app.MapGet("/libros", () => {
-  return Results.Ok(books);
-});
+app.MapGet("/libros", () => { });
 
 // Read one book by Id
 app.MapGet("/libro/{id}", (int id) => { });
