@@ -1,3 +1,4 @@
-[*.cs]
-csharp_new_line_before_open_brace = none
-csharp_indent_braces = false
+.DS_Store
+.editorconfig
+bin/
+obj/
