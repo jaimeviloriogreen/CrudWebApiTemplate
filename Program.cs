@@ -38,7 +38,9 @@ List<Book> books = [
 app.MapPost("/libro", (CreateBookDto book) => { });
 
 // Read all books
-app.MapGet("/libros", () => { });
+app.MapGet("/libros", () => {
+  return Results.Ok(books);
+});
 
 // Read one book by Id
 app.MapGet("/libro/{id}", (int id) => { });
@@ -51,6 +53,9 @@ app.MapDelete("/libro/{id}", (int id) => { });
 
 //Update some fields of a book
 app.MapPatch("/libro/{id}", (int id, UpdateBookDto book) => { });
+
+//Update all fields of a book
+app.MapPut("/libro/{id}", (int id, PatchBookDto book) => { });
 
 app.Run();
 
