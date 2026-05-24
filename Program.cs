@@ -1,4 +1,5 @@
-using CrudWebApi.dto;
+using CrudWebApi.Models;
+using CrudWebApi.Dtos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,7 @@ if (app.Environment.IsDevelopment()) {
 app.UseHttpsRedirection();
 
 // Data
-List<BookDto> books = [
+List<Book> books = [
   new(){
     Id = 1,
     Title = "El mundo de sofía",
@@ -33,6 +34,9 @@ List<BookDto> books = [
 
 // ===  Web api Crud === 
 
+// Create one book
+app.MapPost("/libro", (CreateBookDto book) => { });
+
 // Read all books
 app.MapGet("/libros", () => { });
 
@@ -45,11 +49,8 @@ app.MapGet("/libro", (string? title, string? author) => { });
 // Delete one book by Id
 app.MapDelete("/libro/{id}", (int id) => { });
 
-//Update all fields of a book
-app.MapPut("/libro/{id}", (int id, BookDto book) => { });
-
 //Update some fields of a book
-app.MapPatch("/libro/{id}", (int id, BookDto book) => { });
+app.MapPatch("/libro/{id}", (int id, UpdateBookDto book) => { });
 
 app.Run();
 
