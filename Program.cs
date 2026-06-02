@@ -13,6 +13,8 @@ if (app.Environment.IsDevelopment()) {
 }
 app.UseHttpsRedirection();
 
+var api = app.MapGroup("/api/v1");
+
 // Data
 List<Book> books = [
   new(){
@@ -35,25 +37,29 @@ List<Book> books = [
 // ===  Web api Crud === 
 
 // Create one book
-app.MapPost("/libro", (CreateBookDto book) => { });
+api.MapPost("/libro", (CreateBookDto book) => {
+  return books;
+});
 
 // Read all books
-app.MapGet("/libros", () => { });
+api.MapGet("/libros", () => {
+  return books;
+});
 
 // Read one book by Id
-app.MapGet("/libro/{id}", (int id) => { });
+api.MapGet("/libro/{id}", (int id) => { });
 
 // Read one book by Title or Author
-app.MapGet("/libro", (string? title, string? author) => { });
+api.MapGet("/libro", (string? title, string? author) => { });
 
 // Delete one book by Id
-app.MapDelete("/libro/{id}", (int id) => { });
+api.MapDelete("/libro/{id}", (int id) => { });
 
 //Update some fields of a book
-app.MapPatch("/libro/{id}", (int id, UpdateBookDto book) => { });
+api.MapPatch("/libro/{id}", (int id, UpdateBookDto book) => { });
 
 //Update all fields of a book
-app.MapPut("/libro/{id}", (int id, PatchBookDto book) => { });
+api.MapPut("/libro/{id}", (int id, PatchBookDto book) => { });
 
-app.Run();
+app.Run("http://localhost:3000");
 
